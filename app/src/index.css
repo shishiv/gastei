@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Gastei Design System - WhatsApp-inspired green palette */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+    
+    /* Primary: WhatsApp Green */
+    --primary: 142 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary: Light green */
+    --secondary: 142 30% 95%;
+    --secondary-foreground: 142 70% 35%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Accent: Teal */
+    --accent: 174 60% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive: Red for alerts */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 70% 45%;
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 15% 20%;
+    --sidebar-primary: 142 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 30% 95%;
+    --sidebar-accent-foreground: 142 70% 35%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 142 70% 45%;
+    
+    /* Custom Gastei colors */
+    --gastei-green: 142 70% 45%;
+    --gastei-green-dark: 142 70% 35%;
+    --gastei-green-light: 142 50% 95%;
+    --gastei-teal: 174 60% 45%;
+    --gastei-orange: 25 95% 53%;
+    --gastei-red: 0 72% 51%;
+    --gastei-gray: 220 9% 46%;
+    --gastei-gray-light: 220 14% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Gastei Button Styles */
+  .btn-gastei {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200;
+    @apply bg-primary text-primary-foreground hover:bg-[hsl(142,70%,35%)] hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  .btn-gastei-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground;
+  }
+  
+  /* Gastei Card Styles */
+  .card-gastei {
+    @apply bg-white rounded-2xl shadow-sm border border-border/50 transition-all duration-200;
+    @apply hover:shadow-md hover:border-primary/20;
+  }
+  
+  /* Gastei Section Styles */
+  .section-gastei {
+    @apply w-full py-16 md:py-24;
+  }
+  
+  /* Gastei Gradient Backgrounds */
+  .bg-gastei-gradient {
+    background: linear-gradient(135deg, hsl(142 70% 45%) 0%, hsl(174 60% 45%) 100%);
+  }
+  
+  .bg-gastei-hero {
+    background: linear-gradient(180deg, hsl(142 50% 95%) 0%, hsl(0 0% 100%) 100%);
+  }
+  
+  /* WhatsApp Chat Bubble Styles */
+  .chat-bubble-user {
+    @apply bg-[#DCF8C6] rounded-2xl rounded-tr-sm p-4 max-w-[80%] ml-auto;
+  }
+  
+  .chat-bubble-bot {
+    @apply bg-white rounded-2xl rounded-tl-sm p-4 max-w-[80%] shadow-sm border border-gray-100;
+  }
+  
+  /* Compliance Page Styles */
+  .compliance-container {
+    @apply max-w-3xl mx-auto px-6 py-12;
+  }
+  
+  .compliance-title {
+    @apply text-3xl font-bold text-foreground pb-4 border-b-4 border-primary mb-8;
+  }
+  
+  .compliance-title-danger {
+    @apply text-3xl font-bold text-foreground pb-4 border-b-4 border-destructive mb-8;
+  }
+  
+  .compliance-section {
+    @apply mb-8;
+  }
+  
+  .compliance-section h2 {
+    @apply text-xl font-semibold text-[hsl(142,70%,35%)] mt-8 mb-4;
+  }
+  
+  .compliance-section p {
+    @apply text-muted-foreground leading-relaxed mb-4;
+  }
+  
+  .compliance-section ul {
+    @apply list-disc list-inside space-y-2 text-muted-foreground ml-4;
+  }
+  
+  /* Warning Box */
+  .warning-box {
+    @apply bg-orange-50 border-l-4 border-orange-400 p-4 rounded-r-lg mb-6;
+  }
+  
+  /* Success Box */
+  .success-box {
+    @apply bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mb-6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
