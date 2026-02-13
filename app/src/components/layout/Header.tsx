@@ -1,47 +1,51 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { href: '/', label: 'Início' },
-  { href: '/precos', label: 'Preços' },
-  { href: '/dashboard', label: 'Dashboard' },
+  { href: "/", label: "Inicio" },
+  { href: "/#como-funciona", label: "Para Casais" },
+  { href: "/precos", label: "Precos" },
+  { href: "/dashboard", label: "Dashboard" },
 ];
 
-export function Header() {
+interface HeaderProps {
+  onWaitlistOpen: () => void;
+}
+
+export function Header({ onWaitlistOpen }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
+          ? "bg-white/90 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gastei-green to-gastei-teal flex items-center justify-center shadow-gastei group-hover:shadow-gastei-lg transition-shadow">
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 rounded-xl bg-gastei-gradient flex items-center justify-center shadow-gastei group-hover:shadow-gastei-lg transition-shadow">
               <MessageCircle className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-foreground">
-              Gastei
-            </span>
+            <span className="text-xl font-bold text-foreground">Gastei</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -49,11 +53,11 @@ export function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                to={link.href}
+                href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
                   isActive(link.href)
-                    ? 'text-primary'
-                    : 'text-muted-foreground'
+                    ? "text-primary"
+                    : "text-muted-foreground"
                 }`}
               >
                 {link.label}
@@ -64,10 +68,11 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <Button
-              className="bg-gastei-green hover:bg-gastei-green-dark text-white rounded-full px-6 shadow-gastei hover:shadow-gastei-lg transition-all"
+              onClick={onWaitlistOpen}
+              className="bg-gastei-blue hover:bg-gastei-blue-dark text-white rounded-full px-6 shadow-gastei hover:shadow-gastei-lg transition-all"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
-              Começar Grátis
+              Comecar Gratis
             </Button>
           </div>
 
@@ -93,11 +98,11 @@ export function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                to={link.href}
+                href={link.href}
                 className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                   isActive(link.href)
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-muted-foreground hover:bg-muted'
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:bg-muted"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -105,10 +110,14 @@ export function Header() {
               </Link>
             ))}
             <Button
-              className="mt-4 bg-gastei-green hover:bg-gastei-green-dark text-white rounded-full w-full"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                onWaitlistOpen();
+              }}
+              className="mt-4 bg-gastei-blue hover:bg-gastei-blue-dark text-white rounded-full w-full"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
-              Começar Grátis
+              Comecar Gratis
             </Button>
           </nav>
         </div>

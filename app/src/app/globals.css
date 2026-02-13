@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Gastei Theme: Tailwind v4 CSS-first configuration ─── */
+@theme inline {
+  /* Base shadcn tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Font */
+  --font-sans: var(--font-inter);
+
+  /* ─── Gastei Brand Colors ─── */
+  --color-gastei-blue: #1166CC;
+  --color-gastei-blue-dark: #0D4F9E;
+  --color-gastei-blue-light: #E8F0FB;
+  --color-gastei-teal: #4AAFAB;
+  --color-gastei-teal-dark: #3A8E8B;
+  --color-gastei-accent: #33A8D4;
+
+  /* Gray scale */
+  --color-gastei-gray-50: #F8FAFC;
+  --color-gastei-gray-100: #F1F5F9;
+  --color-gastei-gray-200: #E2E8F0;
+  --color-gastei-gray-300: #CBD5E1;
+  --color-gastei-gray-400: #94A3B8;
+  --color-gastei-gray-500: #64748B;
+  --color-gastei-gray-600: #475569;
+  --color-gastei-gray-700: #334155;
+  --color-gastei-gray-800: #1E293B;
+  --color-gastei-gray-900: #0F172A;
+
+  /* Category colors */
+  --color-category-alimentacao: #f59e0b;
+  --color-category-transporte: #3b82f6;
+  --color-category-moradia: #8b5cf6;
+  --color-category-saude: #ef4444;
+  --color-category-educacao: #10b981;
+  --color-category-lazer: #ec4899;
+  --color-category-mercado: #f97316;
+  --color-category-vestuario: #6366f1;
+  --color-category-servicos: #64748b;
+  --color-category-outros: #94a3b8;
+
+  /* Custom shadows */
+  --shadow-gastei: 0 4px 20px rgb(17 102 204 / 0.12);
+  --shadow-gastei-lg: 0 10px 40px rgb(17 102 204 / 0.18);
+
+  /* Custom animations */
+  --animate-slide-up: slide-up 0.5s ease-out;
+  --animate-slide-in-right: slide-in-right 0.5s ease-out;
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s ease-in-out infinite;
+}
+
+/* ─── Gastei Light Theme (only) ─── */
+:root {
+  --radius: 0.75rem;
+  --background: #FAFBFC;
+  --foreground: #1C2536;
+  --card: #FFFFFF;
+  --card-foreground: #1C2536;
+  --popover: #FFFFFF;
+  --popover-foreground: #1C2536;
+  --primary: #1166CC;
+  --primary-foreground: #FFFFFF;
+  --secondary: #4AAFAB;
+  --secondary-foreground: #FFFFFF;
+  --muted: #EEF1F5;
+  --muted-foreground: #677085;
+  --accent: #33A8D4;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E04040;
+  --border: #DFE3EA;
+  --input: #DFE3EA;
+  --ring: #1166CC;
+}
+
+/* ─── Keyframes ─── */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ─── Base layer ─── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ─── Utility classes ─── */
+@layer utilities {
+  .bg-gastei-gradient {
+    background: linear-gradient(135deg, #1166CC, #4AAFAB);
+  }
+  .bg-gastei-hero {
+    background: linear-gradient(to bottom, #E8F0FB, #FAFBFC);
+  }
+  .text-gastei-gradient {
+    background: linear-gradient(135deg, #1166CC, #4AAFAB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

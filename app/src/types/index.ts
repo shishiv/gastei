@@ -1,26 +1,14 @@
-// Gastei Types
-
-export interface Expense {
-  id: string;
-  amount: number;
-  category: Category;
-  description: string;
-  date: string;
-  location?: string;
-  paymentMethod?: string;
-}
-
-export type Category = 
-  | 'alimentacao' 
-  | 'transporte' 
-  | 'moradia' 
-  | 'saude' 
-  | 'educacao' 
-  | 'lazer' 
-  | 'mercado' 
-  | 'vestuario' 
-  | 'servicos' 
-  | 'outros';
+export type Category =
+  | "alimentacao"
+  | "transporte"
+  | "moradia"
+  | "saude"
+  | "educacao"
+  | "lazer"
+  | "mercado"
+  | "vestuario"
+  | "servicos"
+  | "outros";
 
 export interface CategoryInfo {
   id: Category;
@@ -38,26 +26,10 @@ export interface Plan {
   features: string[];
   limits: string;
   highlighted?: boolean;
+  badge?: string;
 }
 
-export interface User {
-  id: string;
-  name: string;
-  phone: string;
-  plan: Plan;
-  createdAt: string;
-}
-
-export interface MonthlySummary {
-  month: string;
-  year: number;
-  total: number;
-  byCategory: Record<Category, number>;
-  expenses: Expense[];
-}
-
-export interface DashboardData {
-  currentMonth: MonthlySummary;
-  previousMonth: MonthlySummary;
-  recentExpenses: Expense[];
+export interface WaitlistEntry {
+  email: string;
+  phone?: string;
 }
