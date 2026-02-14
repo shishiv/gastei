@@ -1,4 +1,4 @@
-# <img src="https://unpkg.com/lucide-static@latest/icons/wallet.svg" width="32" height="32" alt="Gastei"> Gastei
+# <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/dark/wallet.svg"><img src="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/light/wallet.svg" width="32" height="32" alt="Gastei"></picture> Gastei
 
 **Smart expense tracking for couples.** Know where your money goes — together.
 
@@ -6,7 +6,7 @@ Gastei helps couples manage shared finances with real-time tracking, smart categ
 
 We have a functional MVP running on n8n + PostgreSQL (self-hosted schema). The focus is sharp: couples finance, with a clear differentiator — multi-input logging. Say "gastei 50 no mercado" in a WhatsApp voice message, and Whisper transcribes it into a categorized expense. Snap a photo of a receipt, and OCR pulls out the items, total, and category. Text, voice, or image — everything becomes a tracked expense.
 
-## <img src="https://unpkg.com/lucide-static@latest/icons/heart.svg" width="20" height="20" alt="Why Gastei"> Why Gastei?
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/dark/heart.svg"><img src="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/light/heart.svg" width="20" height="20" alt="Why Gastei"></picture> Why Gastei?
 
 Couples argue about money. Gastei removes the friction.
 
@@ -17,7 +17,7 @@ No spreadsheets. No manual logging. Just talk, snap, or type. Three input modes 
 
 Done.
 
-## <img src="https://unpkg.com/lucide-static@latest/icons/sparkles.svg" width="20" height="20" alt="Features"> Features
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/dark/sparkles.svg"><img src="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/light/sparkles.svg" width="20" height="20" alt="Features"></picture> Features
 
 - 📊 **Dashboard** — Real-time overview of expenses, income, and balances
 - 👫 **Couples Mode** — Shared wallets with individual + joint spending views
@@ -28,7 +28,7 @@ Done.
 - 📈 **Insights** — Monthly trends, spending patterns, savings goals
 - 🔔 **Alerts** — Budget limits, unusual spending, bill reminders
 
-## <img src="https://unpkg.com/lucide-static@latest/icons/layers.svg" width="20" height="20" alt="Tech Stack"> Tech Stack
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/dark/layers.svg"><img src="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/light/layers.svg" width="20" height="20" alt="Tech Stack"></picture> Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -43,7 +43,7 @@ Done.
 | **AI** | OpenAI GPT (categorization + insights) |
 | **Deploy** | Vercel + Easypanel (self-hosted DB) |
 
-## <img src="https://unpkg.com/lucide-static@latest/icons/zap.svg" width="20" height="20" alt="How It Works"> How It Works
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/dark/zap.svg"><img src="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/light/zap.svg" width="20" height="20" alt="How It Works"></picture> How It Works
 
 ```
 📱 You                          💸 Gastei
@@ -52,7 +52,7 @@ Done.
 📸 [receipt photo]          →    📸 OCR → R$127.50 (3 items)
 ```
 
-## <img src="https://unpkg.com/lucide-static@latest/icons/map.svg" width="20" height="20" alt="Roadmap"> Roadmap
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/dark/map.svg"><img src="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/light/map.svg" width="20" height="20" alt="Roadmap"></picture> Roadmap
 
 ### Phase 1 — Foundation ✅
 - [x] Project setup (Next.js + TypeScript + Tailwind)
@@ -87,7 +87,7 @@ Done.
 - [ ] Export reports (PDF/CSV)
 - [ ] Family mode (beyond couples)
 
-## <img src="https://unpkg.com/lucide-static@latest/icons/rocket.svg" width="20" height="20" alt="Getting Started"> Getting Started
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/dark/rocket.svg"><img src="https://raw.githubusercontent.com/shishiv/shishiv/main/assets/icons/light/rocket.svg" width="20" height="20" alt="Getting Started"></picture> Getting Started
 
 ```bash
 # Clone
