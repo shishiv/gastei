@@ -1,4 +1,4 @@
-# 💸 Gastei
+# <img src="https://unpkg.com/lucide-static@latest/icons/wallet.svg" width="32" height="32" alt="Gastei"> Gastei
 
 **Smart expense tracking for couples.** Know where your money goes — together.
 
@@ -6,7 +6,7 @@ Gastei helps couples manage shared finances with real-time tracking, smart categ
 
 We have a functional MVP running on n8n + PostgreSQL (self-hosted schema). The focus is sharp: couples finance, with a clear differentiator — multi-input logging. Say "gastei 50 no mercado" in a WhatsApp voice message, and Whisper transcribes it into a categorized expense. Snap a photo of a receipt, and OCR pulls out the items, total, and category. Text, voice, or image — everything becomes a tracked expense.
 
-## 🎯 Why Gastei?
+## <img src="https://unpkg.com/lucide-static@latest/icons/heart.svg" width="20" height="20" alt="Why Gastei"> Why Gastei?
 
 Couples argue about money. Gastei removes the friction.
 
@@ -17,7 +17,7 @@ No spreadsheets. No manual logging. Just talk, snap, or type. Three input modes 
 
 Done.
 
-## ✨ Features
+## <img src="https://unpkg.com/lucide-static@latest/icons/sparkles.svg" width="20" height="20" alt="Features"> Features
 
 - 📊 **Dashboard** — Real-time overview of expenses, income, and balances
 - 👫 **Couples Mode** — Shared wallets with individual + joint spending views
@@ -28,7 +28,7 @@ Done.
 - 📈 **Insights** — Monthly trends, spending patterns, savings goals
 - 🔔 **Alerts** — Budget limits, unusual spending, bill reminders
 
-## 🛠️ Tech Stack
+## <img src="https://unpkg.com/lucide-static@latest/icons/layers.svg" width="20" height="20" alt="Tech Stack"> Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -43,7 +43,7 @@ Done.
 | **AI** | OpenAI GPT (categorization + insights) |
 | **Deploy** | Vercel + Easypanel (self-hosted DB) |
 
-## 💬 How It Works
+## <img src="https://unpkg.com/lucide-static@latest/icons/zap.svg" width="20" height="20" alt="How It Works"> How It Works
 
 ```
 📱 You                          💸 Gastei
@@ -52,7 +52,7 @@ Done.
 📸 [receipt photo]          →    📸 OCR → R$127.50 (3 items)
 ```
 
-## 🗺️ Roadmap
+## <img src="https://unpkg.com/lucide-static@latest/icons/map.svg" width="20" height="20" alt="Roadmap"> Roadmap
 
 ### Phase 1 — Foundation ✅
 - [x] Project setup (Next.js + TypeScript + Tailwind)
@@ -87,7 +87,7 @@ Done.
 - [ ] Export reports (PDF/CSV)
 - [ ] Family mode (beyond couples)
 
-## 🚀 Getting Started
+## <img src="https://unpkg.com/lucide-static@latest/icons/rocket.svg" width="20" height="20" alt="Getting Started"> Getting Started
 
 ```bash
 # Clone
