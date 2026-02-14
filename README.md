@@ -9,6 +9,8 @@ Gastei helps couples manage shared finances with real-time tracking, smart categ
 - 📊 **Dashboard** — Real-time overview of expenses, income, and balances
 - 👫 **Couples Mode** — Shared wallets with individual + joint spending views
 - 🏷️ **Smart Categories** — Auto-categorization powered by AI
+- 🎙️ **Voice Input** — Send an audio saying "gastei 50 no mercado" and Whisper transcribes + logs it
+- 📸 **Receipt OCR** — Snap a photo of any receipt — OCR extracts items, totals, and categories automatically
 - 📱 **Mobile-first** — PWA optimized for quick expense logging
 - 📈 **Insights** — Monthly trends, spending patterns, savings goals
 - 🔔 **Alerts** — Budget limits, unusual spending, bill reminders
@@ -22,7 +24,7 @@ Gastei helps couples manage shared finances with real-time tracking, smart categ
 | **Backend** | Next.js API Routes, Prisma ORM |
 | **Database** | PostgreSQL |
 | **Auth** | NextAuth.js |
-| **AI** | OpenAI (categorization + insights) |
+| **AI** | OpenAI Whisper (voice), OCR (receipts), GPT (categorization + insights) |
 | **Deploy** | Vercel + Easypanel (self-hosted DB) |
 
 ## 🗺️ Roadmap
@@ -40,7 +42,9 @@ Gastei helps couples manage shared finances with real-time tracking, smart categ
 - [ ] Couples invite & shared wallet
 
 ### Phase 3 — Intelligence
-- [ ] AI auto-categorization (receipt scanning)
+- [ ] Whisper voice-to-expense pipeline (audio → transcription → parsed expense)
+- [ ] Receipt OCR (photo → extracted items + total + category)
+- [ ] AI auto-categorization from text, voice, and image inputs
 - [ ] Monthly spending insights
 - [ ] Budget alerts & notifications
 - [ ] Recurring expenses detection
