@@ -4,6 +4,19 @@
 
 Gastei helps couples manage shared finances with real-time tracking, smart categorization, and AI-powered insights. No more spreadsheets, no more arguments about money.
 
+We have a functional MVP running on n8n + PostgreSQL (self-hosted schema). The focus is sharp: couples finance, with a clear differentiator — multi-input logging. Say "gastei 50 no mercado" in a WhatsApp voice message, and Whisper transcribes it into a categorized expense. Snap a photo of a receipt, and OCR pulls out the items, total, and category. Text, voice, or image — everything becomes a tracked expense.
+
+## 🎯 Why Gastei?
+
+Couples argue about money. Gastei removes the friction.
+
+No spreadsheets. No manual logging. Just talk, snap, or type. Three input modes that actually work:
+- **Text:** "gastei 50 mercado"
+- **Voice:** Send an audio message
+- **Photo:** Snap the receipt
+
+Done.
+
 ## ✨ Features
 
 - 📊 **Dashboard** — Real-time overview of expenses, income, and balances
@@ -24,8 +37,20 @@ Gastei helps couples manage shared finances with real-time tracking, smart categ
 | **Backend** | Next.js API Routes, Prisma ORM |
 | **Database** | PostgreSQL |
 | **Auth** | NextAuth.js |
-| **AI** | OpenAI Whisper (voice), OCR (receipts), GPT (categorization + insights) |
+| **Voice** | OpenAI Whisper (transcription) |
+| **OCR** | Tesseract / Google Vision (receipt parsing) |
+| **WhatsApp** | WhatsApp Business API (voice + image input) |
+| **AI** | OpenAI GPT (categorization + insights) |
 | **Deploy** | Vercel + Easypanel (self-hosted DB) |
+
+## 💬 How It Works
+
+```
+📱 You                          💸 Gastei
+"gastei 50 no mercado"    →    💬 Text parsed → R$50 Groceries
+🎙️ "trinta reais uber"    →    🎙️ Whisper → R$30 Transport  
+📸 [receipt photo]          →    📸 OCR → R$127.50 (3 items)
+```
 
 ## 🗺️ Roadmap
 
@@ -40,10 +65,11 @@ Gastei helps couples manage shared finances with real-time tracking, smart categ
 - [ ] Categories management
 - [ ] Dashboard with monthly summary
 - [ ] Couples invite & shared wallet
+- [ ] WhatsApp integration (text + voice + image input)
+- [ ] Voice-to-expense: audio → Whisper → parsed expense
+- [ ] Photo-to-expense: receipt → OCR → items + total
 
 ### Phase 3 — Intelligence
-- [ ] Whisper voice-to-expense pipeline (audio → transcription → parsed expense)
-- [ ] Receipt OCR (photo → extracted items + total + category)
 - [ ] AI auto-categorization from text, voice, and image inputs
 - [ ] Monthly spending insights
 - [ ] Budget alerts & notifications
@@ -84,4 +110,4 @@ MIT
 
 ---
 
-Built with ☕ by [Myke Matos](https://github.com/shishiv) — TriânguloTEC
+**Built by Myke Matos — TriânguloTEC**
