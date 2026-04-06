@@ -1,0 +1,27 @@
+{
+  "template": "spike",
+  "templateName": "Research Spike",
+  "description": "arquitetura correta pra tratar com grupos no whatsapp - evoapigo? baileys port? webwhatsapp.js?",
+  "branch": "gsd/spike/arquitetura-correta-pra-tratar-com-grupo",
+  "phases": [
+    {
+      "name": "scope",
+      "index": 0,
+      "status": "active"
+    },
+    {
+      "name": "research",
+      "index": 1,
+      "status": "pending"
+    },
+    {
+      "name": "synthesize",
+      "index": 2,
+      "status": "pending"
+    }
+  ],
+  "currentPhase": 0,
+  "startedAt": "2026-04-06T22:45:40.540Z",
+  "updatedAt": "2026-04-06T22:45:40.540Z",
+  "artifactDir": "/Users/marlonreis/gastei/.gsd/workflows/spikes/260406-1-arquitetura-correta-pra-tratar-com-grupo"
+}
