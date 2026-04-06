@@ -1,40 +1,40 @@
-# Spike: Arquitetura para Grupos no WhatsApp
+# Spike: Arquitetura para Grupos no WhatsApp — Gastei
 
 **Data:** 2026-04-06  
-**Contexto:** Gastei — expense tracker WhatsApp-native para casais  
+**Status:** Concluído
 
 ## Pergunta Central
 
 Qual a arquitetura correta para lidar com grupos no WhatsApp no Gastei?
 
-O Gastei é um app de finanças para casais que usa WhatsApp como canal de entrada. O plano "Familiar" (até 5 membros) e o modelo "Casal" precisam que múltiplas pessoas logem despesas no mesmo espaço compartilhado. Grupos do WhatsApp são o meio natural para isso — o casal já tem um grupo, basta adicionar o bot.
+## Opções Avaliadas (10 total)
 
-## Opções em Análise
+| # | Opção | Tipo |
+|---|-------|------|
+| A | Evolution API (Node.js) | REST API self-hosted sobre Baileys |
+| B | Evolution Go | REST API self-hosted sobre whatsmeow |
+| C | Baileys direto | Lib TypeScript, WebSocket direto |
+| D | whatsmeow direto | Lib Go, WebSocket direto |
+| E | whatsapp-web.js | Puppeteer-based |
+| F | WPPConnect | Puppeteer-based (BR) |
+| G | WAHA | Multi-engine (WEBJS/NOWEB/GOWS) |
+| H | Venom Bot | Puppeteer-based (não mais open-source) |
+| I | Twilio (BSP) | Business API via Conversations API |
+| J | WhatsApp Business API oficial | Groups API da Meta |
 
-| # | Opção | O que é |
-|---|-------|---------|
-| A | **Evolution API** | Plataforma open-source self-hosted que expõe REST API sobre Baileys, com multi-instância e webhooks |
-| B | **Baileys direto** | Lib TypeScript que fala WebSocket direto com o protocolo WhatsApp Web — sem browser |
-| C | **whatsapp-web.js** | Lib que roda WhatsApp Web via Puppeteer (headless Chrome) |
-| D | **WhatsApp Business API oficial (Cloud API)** | API oficial da Meta com Groups API (lançada em out/2025) |
+**Extra:** Avaliada abordagem DM-only (sem grupo) e API custom sobre whatsmeow.
 
-## Critérios de Comparação
+## Decisão
 
-1. **Suporte a grupos** — Criar grupo, receber mensagens de grupo, identificar remetente dentro do grupo
-2. **Suporte a mídia** — Áudio (Whisper), imagem (OCR), texto — os 3 modos de input do Gastei
-3. **Custo** — Self-hosted vs SaaS vs pay-per-message
-4. **Complexidade operacional** — Deploy, manutenção, reconexão, sessão
-5. **Risco de ban/bloqueio** — APIs não-oficiais vs API oficial
-6. **Escalabilidade** — De 10 casais a 50K+ usuários
-7. **DX / fit com stack** — TypeScript, Next.js, Vercel/Easypanel
-8. **Maturidade / comunidade** — Ativo? Documentado? Suporte?
+**Microserviço custom em Go sobre whatsmeow.**
 
-## Formato de Decisão
+Insight: grupo = tenant → 1 número → ∞ casais → custo zero → onboarding self-service.
 
-Matriz de comparação → Recomendação primária + fallback.
+## Artefatos
 
-## Ângulos de Pesquisa
-
-1. **Evolution API** — Plataforma completa, REST layer sobre Baileys
-2. **Baileys direto** — Lib low-level, controle total
-3. **whatsapp-web.js + WhatsApp Business API oficial** — Comparadas como alternativas (uma Puppeteer-based, outra oficial da Meta)
+- `research/EVOLUTION-API.md` — Evolution API (Node.js)
+- `research/BAILEYS-DIRETO.md` — Baileys direto
+- `research/WWEBJS-E-BUSINESS-API.md` — whatsapp-web.js + WA Business API
+- `research/ALTERNATIVAS-ADICIONAIS.md` — Evolution Go, WPPConnect, WAHA, Venom, Twilio, DM-only
+- `research/WHATSMEOW-CUSTOM-API.md` — API custom em Go sobre whatsmeow (deep dive)
+- `RECOMMENDATION.md` — Recomendação final + roadmap de produto
